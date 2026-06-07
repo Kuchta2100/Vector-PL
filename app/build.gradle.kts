@@ -1,20 +1,20 @@
 /*
- * This file is part of Vector.
+ * This file is part of LSPosed.
  *
- * Vector is free software: you can redistribute it and/or modify
+ * LSPosed is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * Vector is distributed in the hope that it will be useful,
+ * LSPosed is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with Vector.  If not, see <https://www.gnu.org/licenses/>.
+ * along with LSPosed.  If not, see <https://www.gnu.org/licenses/>.
  *
- * Copyright (C) 2026 Vector Contributors
+ * Copyright (C) 2021 LSPosed Contributors
  */
 
 import java.time.Instant
@@ -103,7 +103,9 @@ materialThemeBuilder {
                 "BlueGrey" to "6A89A7",
                 "Sakura" to "FCC9B9",
             )) {
-            create("Material_$name") {
+            create("Material$name") {
+                lightThemeFormat = "ThemeOverlay.Light.%s"
+                darkThemeFormat = "ThemeOverlay.Dark.%s"
                 primaryColor = "#$color"
             }
         }
@@ -111,7 +113,7 @@ materialThemeBuilder {
     // Add Material Design 3 color tokens (such as palettePrimary100) in generated theme
     // rikka.material:material >= 2.0.0 provides such attributes
     // Enable this if your are using rikka.material:material
-    generatePalette = true
+    generatePalette = false
 }
 
 dependencies {
