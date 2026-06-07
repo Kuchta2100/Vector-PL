@@ -103,7 +103,7 @@ materialThemeBuilder {
                 "BlueGrey" to "6A89A7",
                 "Sakura" to "FCC9B9",
             )) {
-            create(name) {
+            create("Material$name") {
                 primaryColor = "#$color"
             }
         }
