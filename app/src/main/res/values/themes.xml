@@ -67,4 +67,23 @@
         <item name="android:paddingBottom">24dp</item>
     </style>
 
+<style name="Theme.Red" parent="Theme">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorBackground">@color/colorBackground</item>
+        <item name="colorSurface">@color/colorSurface</item>
+
+        <item name="colorOnPrimary">@color/colorOnPrimary</item>
+        <item name="colorOnAccent">@color/colorOnAccent</item>
+        <item name="colorOnBackground">@color/colorOnBackground</item>
+        <item name="colorOnSurface">@color/colorOnSurface</item>
+
+        <item name="colorError">@color/colorError</item>
+        <item name="colorOnError">@color/colorOnError</item>
+        <item name="colorOutline">@color/colorOutline</item>
+        <item name="colorInversePrimary">@color/colorInversePrimary</item>
+        <item name="colorInverseSurface">@color/colorInverseSurface</item>
+        <item name="colorInverseOnSurface">@color/colorInverseOnSurface</item>
+    </style>
+
 </resources>
