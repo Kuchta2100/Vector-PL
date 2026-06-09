@@ -1,20 +1,20 @@
 /*
- * This file is part of LSPosed.
- *
- * LSPosed is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * LSPosed is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with LSPosed.  If not, see <https://www.gnu.org/licenses/>.
- *
- * Copyright (C) 2021 LSPosed Contributors
+* Ten plik jest częścią Vector.
+*
+* Vector jest wolnym oprogramowaniem: możesz je redystrybuować i/lub modyfikować
+* zgodnie z warunkami Powszechnej Licencji Publicznej GNU, opublikowanej przez
+* Fundację Wolnego Oprogramowania, w wersji 3 Licencji lub
+* (według własnego wyboru) dowolnej późniejszej wersji.
+*
+* Vector jest rozpowszechniany z nadzieją, że okaże się użyteczny,
+* ale BEZ ŻADNEJ GWARANCJI; nawet bez domniemanej gwarancji
+* PRZYDATNOŚCI HANDLOWEJ lub PRZYDATNOŚCI DO OKREŚLONEGO CELU. Więcej informacji można znaleźć w
+* Powszechnej Licencji Publicznej GNU.
+*
+* Powinieneś otrzymać kopię Powszechnej Licencji Publicznej GNU
+* wraz z Vector. W przeciwnym razie zapoznaj się z informacjami na stronie <https://www.gnu.org/licenses/>.
+*
+* Copyright (C) 2026 Współtwórcy Vector
  */
 
 import java.time.Instant
@@ -83,25 +83,25 @@ materialThemeBuilder {
     themes {
         for ((name, color) in
             listOf(
-                "Red" to "FF0000",
-                "Pink" to "FFC0CB",
-                "Purple" to "800080",
-                "DeepPurple" to "36013F",
-                "Indigo" to "4B0082",
-                "Blue" to "0000FF",
-                "LightBlue" to "ADD8E6",
-                "Cyan" to "00FFFF",
-                "Teal" to "008080",
-                "Green" to "008000",
-                "LightGreen" to "90EE90",
-                "Lime" to "00FF00",
-                "Yellow" to "FFFF00",
-                "Amber" to "FFBF00",
-                "Orange" to "FFA500",
-                "DeepOrange" to "FF8C00",
-                "Brown" to "964B00",
-                "BlueGrey" to "6A89A7",
-                "Sakura" to "FCC9B9",
+                "Red" to "F44336",
+                "Pink" to "E91E63",
+                "Purple" to "9C27B0",
+                "DeepPurple" to "673AB7",
+                "Indigo" to "3F51B5",
+                "Blue" to "2196F3",
+                "LightBlue" to "03A9F4",
+                "Cyan" to "00BCD4",
+                "Teal" to "009688",
+                "Green" to "4FAF50",
+                "LightGreen" to "8BC3A4",
+                "Lime" to "CDDC39",
+                "Yellow" to "FFEB3B",
+                "Amber" to "FFC107",
+                "Orange" to "FF9800",
+                "DeepOrange" to "FF5722",
+                "Brown" to "795548",
+                "BlueGrey" to "607D8F",
+                "Sakura" to "FF9CA8",
             )) {
             create("Material$name") {
                 lightThemeFormat = "ThemeOverlay.Light.%s"
@@ -110,10 +110,10 @@ materialThemeBuilder {
             }
         }
     }
-    // Add Material Design 3 color tokens (such as palettePrimary100) in generated theme
-    // rikka.material:material >= 2.0.0 provides such attributes
-    // Enable this if your are using rikka.material:material
-    generatePalette = false
+    // Dodaj 3 kolorowe tokeny Material Design (takie jak palettePrimary100) w wygenerowanym motywie
+    // rikka.material:material >= 2.0.0 zapewnia takie atrybuty
+    // Włącz tę opcję, jeśli używasz rikka.material:material
+    generatePalette = true
 }
 
 dependencies {
