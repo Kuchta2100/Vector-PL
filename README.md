@@ -11,8 +11,6 @@
 
 </div>
 
-https://github.com/Kuchta2100/Vector-PL
-
 ---
 
 ### Wprowadzenie
