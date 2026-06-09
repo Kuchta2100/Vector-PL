@@ -1,4 +1,4 @@
-name: Core
+name: Vector-PL
 
 on:
   workflow_dispatch:
