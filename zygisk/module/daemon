@@ -4,7 +4,7 @@ dir="${0%/*}"
 tmpDaemonApk="/data/local/tmp/daemon.apk"
 debug="@DEBUG@"
 
-# Safely check for debug APK and set classpath
+# Bezpiecznie sprawdź debugowanie APK i ustaw ścieżkę klasy
 if [ -r "$tmpDaemonApk" ]; then
   java_options="-Djava.class.path=$tmpDaemonApk"
   debug="true"
@@ -12,8 +12,8 @@ else
   java_options="-Djava.class.path=$dir/daemon.apk"
 fi
 
-# Apply debug options based on Android SDK version.
-# Reference: https://developer.android.com/ndk/guides/wrap-script#debugging_when_using_wrapsh
+# Zastosuj opcje debugowania na podstawie wersji Android SDK.
+# Odniesienie: https://developer.android.com/ndk/guides/wrap-script#debugging_when_using_wrapsh
 if [ "$debug" = "true" ]; then
   os_version=$(getprop ro.build.version.sdk)
   if [ "$os_version" -eq "27" ]; then
@@ -25,22 +25,22 @@ if [ "$debug" = "true" ]; then
   fi
 fi
 
-# Mount an empty temporary file system over /data/resource-cache to avoid possible overlay conflicts.
-# Note that this script runs inside an isolated mount namespace (via unshare).
+# Zamontuj pusty tymczasowy system plików w /data/resource-cache, aby uniknąć potencjalnych konfliktów nakładek.
+# Należy pamiętać, że ten skrypt działa w odizolowanej przestrzeni nazw montowania (za pośrednictwem unshare).
 mount tmpfs -t tmpfs /data/resource-cache
 
-# Wait for Zygote socket using a polling loop
+# Poczekaj na gniazdo zygote, używając pętli sondowania
 if [ ! -S "/dev/socket/zygote" ]; then
-  # Wait up to ~10 seconds to avoid an infinite hang if something breaks
+  # Poczekaj do ~10 sekund, aby uniknąć nieskończonego zawieszenia, jeśli coś się zepsuje
   wait_count=0
   while [ ! -S "/dev/socket/zygote" ] &&[ "$wait_count" -lt 100 ]; do
     sleep 0.1
     wait_count=$((wait_count + 1))
   done
-  [ "$debug" = "true" ] && log -p v -t "Vector" "zygote started"
+  [ "$debug" = "true" ] && log -p v -t "Vector" "zygote uruchomiony"
 fi
 
-[ "$debug" = "true" ] && log -p d -t "Vector" "Starting daemon $*"
+[ "$debug" = "true" ] && log -p d -t "Vector" "Uruchamianie daemon $*"
 
-# Launch the daemon
+# Włącz daemon
 exec /system/bin/app_process $java_options /system/bin --nice-name=lspd org.matrix.vector.daemon.VectorDaemon "$@" >/dev/null 2>&1
