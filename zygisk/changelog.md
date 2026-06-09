@@ -11,6 +11,6 @@ Wraz z niedawną publikacją libxposed API 101, ekosystem zmierza w kierunku now
 
 
 ### ⚙️ Ulepszenia silnika i systemu
-* 🔓 **ominięto ograniczenia bionicznego `ld_preload`:** Rozwiązano krytyczne błędy przestrzeni nazw w systemie Android 10 poprzez załadowanie biblioteki hooków `dex2oat` za pomocą deskryptora pliku `memfd_create` opartego na systemie plików tmpfs, omijając sprawdzanie przestrzeni nazw przez linker.
+* 🔓 **Pominięto ograniczenia bionicznego `ld_preload`:** Rozwiązano krytyczne błędy przestrzeni nazw w systemie Android 10 poprzez załadowanie biblioteki hooków `dex2oat` za pomocą deskryptora pliku `memfd_create` opartego na systemie plików tmpfs, omijając sprawdzanie przestrzeni nazw przez linker.
 * 🛡️ **Przebudowa parzystości odbicia:** Całkowicie przebudowano zaplecze `invokeSpecialMethod` w celu poprawy wydajności, zwiększenia niezawodności i odzwierciedlenia standardowego zachowania odbicia w Javie.
 * ⏱️ **Autonomiczne uruchomienie z późnym wstrzykiwaniem:** Dodano natywną obsługę ręcznego późnego wstrzykiwania (wyzwalanego przez NeoZygisk), bez polegania na fazie wczesnego inicjowania Magiska — bardzo przydatne w kompilacjach debugowania AOSP.
