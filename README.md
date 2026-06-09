@@ -4,10 +4,10 @@
 
 **Wysokowydajna struktura do tworzenia grafiki dla nowoczesnego Androida**
 
-[![build](https://img.shields.io/github/actions/workflow/status/Kuchta2100/Vector-PL/core.yml?branch=master&event=push&logo=github&label=Build)](https://github.com/Kuchta2100/Vector-PL/actions/workflows/core.yml?query=event%3Apush+branch%3Amaster+is%3Acompleted)
+[![build](https://img.shields.io/github/actions/workflow/status/Kuchta2100/Vector-PL/core.yml?branch=PL&event=push&logo=github&label=Build)](https://github.com/Kuchta2100/Vector-PL/actions/workflows/core.yml?query=event%3Apush+branch%3APL+is%3Acompleted)
 [![Crowdin](https://img.shields.io/badge/Localization-Crowdin-blueviolet?logo=Crowdin)](https://crowdin.com/project/lsposed_jingmatrix)
-[![Pobierz](https://img.shields.io/github/v/release/Kuchta2100/Vector-PL?color=orange&logoColor=orange&label=Download&logo=DocuSign)](https://github.com/JingMatrix/Vector/releases/latest)
-[![Razem](https://shields.io/github/downloads/JingMatrix/Vector/total?logo=Bookmeter&label=Counts&logoColor=yellow&color=yellow)](https://github.com/JingMatrix/Vector/releases)
+[![Pobierz](https://img.shields.io/github/v/release/Kuchta2100/Vector-PL?color=orange&logoColor=orange&label=Download&logo=DocuSign)](https://github.com/Kuchta2100/Vector-PL/releases/latest)
+[![Razem](https://shields.io/github/downloads/Kuchta2100/Vector-PL/total?logo=Bookmeter&label=Counts&logoColor=yellow&color=yellow)](https://github.com/Kuchta2100/Vector-PL/releases)
 
 </div>
 
