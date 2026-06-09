@@ -35,6 +35,9 @@
         <item name="android:colorAccent">?colorPrimary</item>
         <!-- Przełącznik preferencji -->
         <item name="android:colorControlActivated">?colorPrimary</item>
+        <item name="colorPrimaryContainer">?colorPrimary</item>
+        <item name="colorSecondaryContainer">?colorPrimary</item>
+        <item name="colorSurfaceVariant">?android:colorBackground</item>
     </style>
 
     <style name="Theme.Light" parent="Base.AppTheme.Light" />
@@ -51,6 +54,9 @@
         <item name="android:colorAccent">?colorPrimary</item>
         <!-- Przełącznik preferencji -->
         <item name="android:colorControlActivated">?colorPrimary</item>
+        <item name="colorPrimaryContainer">?colorPrimary</item>
+        <item name="colorSecondaryContainer">?colorPrimary</item>
+        <item name="colorSurfaceVariant">?android:colorBackground</item>   
     </style>
 
     <style name="Theme" parent="Base.AppTheme" />
