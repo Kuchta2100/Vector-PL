@@ -1,38 +1,38 @@
-# Xposed API implementation of the Vector framework
+# Implementacja API Xposed dla struktury Vector
 
-This module implements the [libxposed](https://github.com/libxposed/api) API for the Vector framework. It serves as the primary bridge between the native ART hooking engine (`lsplant`) and module developers, providing a type-safe, OkHttp-style interceptor chain architecture.
+Ten moduł implementuje API [libxposed](https://github.com/libxposed/api) dla struktury Vector. Służy jako główny pomost między natywnym mechanizmem przechwytywania ART (`lsplant`) a programistami modułów, zapewniając bezpieczną pod względem typów architekturę łańcucha przechwytującego w stylu OkHttp.
 
-## Architectural Overview
+## Przegląd architektury
 
-The `xposed` module is designed with strict boundaries to ensure stability during the Android boot process and application lifecycles. It is written entirely in Kotlin and operates independently of the legacy Xposed API (`de.robv.android.xposed`). 
-It defines a Dependency Injection (DI) contract (`LegacyFrameworkDelegate`) which the `legacy` module must implement and inject during startup.
+Moduł `xposed` został zaprojektowany z uwzględnieniem ścisłych ograniczeń, aby zapewnić stabilność podczas rozruchu systemu Android i cyklu życia aplikacji. Jest on w całości napisany w języku Kotlin i działa niezależnie od starszego API Xposed (`de.robv.android.xposed`).
+Definiuje kontrakt wstrzykiwania zależności (DI) (`LegacyFrameworkDelegate`), który moduł `legacy` musi zaimplementować i wstrzyknąć podczas uruchamiania.
 
-## Core Components
+ ## Główne komponenty
 
-### 1. The Hooking Engine
+### 1. Silnik hookowania
 
-*   **`VectorHookBuilder`**: Implements the `HookBuilder` API. It validates the target `Executable`, bundles the module's `Hooker`, `priority`, and `ExceptionMode` into a `VectorHookRecord`, and registers it natively via JNI.
-*   **`VectorNativeHooker`**: The JNI trampoline target. When a hooked method is executed, the C++ layer invokes `callback(Array<Any?>)` on this class. It fetches the active hooks (both modern and legacy) from the native registry as global `jobject` references, constructs the root `VectorChain`, and initiates execution.
-*   **`VectorChain`**: Implements the recursive `proceed()` state machine.
-    *   **Exception Handling**: It implements the logic for `ExceptionMode`. In `PROTECTIVE` mode, if an interceptor throws an exception *before* calling `proceed()`, the chain skips the interceptor. If it throws *after* calling `proceed()`, the chain catches the exception and restores the cached downstream result/throwable to protect the host process.
+* **`VectorHookBuilder`**: Implementuje API `HookBuilder`. Sprawdza poprawność docelowego `Executable`, pakuje `Hooker`, `priority` i `ExceptionMode` modułu do `VectorHookRecord` i rejestruje go natywnie przez JNI.
+* **`VectorNativeHooker`**: Docelowa trampolina JNI. Po wykonaniu metody hookowanej, warstwa C++ wywołuje `callback(Array<Any?>)` w tej klasie. Pobiera aktywne hooki (zarówno nowoczesne, jak i starsze) z rejestru natywnego jako globalne referencje `jobject`, konstruuje główny `VectorChain` i inicjuje wykonanie.
+* **`VectorChain`**: Implementuje rekurencyjną maszynę stanów `proceed()`.
+ * **Obsługa wyjątków**: Implementuje logikę dla `ExceptionMode`. W trybie `PROTECTIVE`, jeśli interceptor zgłosi wyjątek *przed* wywołaniem `proceed()`, łańcuch pomija interceptor. Jeśli zgłosi wyjątek *po* wywołaniu `proceed()`, łańcuch przechwytuje wyjątek i przywraca zbuforowany wynik/zmienną throwable, aby chronić proces hosta.
 
-### 2. The Invocation System
+### 2. System wywołań
 
-The `Invoker` system allows modules to execute methods while bypassing standard JVM access checks, with granular control over hook execution.
+System `Invoker` umożliwia modułom wykonywanie metod z pominięciem standardowych kontroli dostępu JVM, z precyzyjną kontrolą nad wykonywaniem hooków.
 
-*   **`Type.Origin`**: Dispatches directly to JNI (`HookBridge.invokeOriginalMethod`), bypassing all active hooks.
-*   **`Type.Chain`**: Constructs a localized `VectorChain` containing only hooks with a priority less than or equal to the requested `maxPriority`, allowing modules to execute partial hook chains.
-*   **`VectorCtorInvoker`**: Handles constructor invocation. It separates memory allocation (`HookBridge.allocateObject`) from initialization (`invokeOriginalMethod` / `invokeSpecialMethod`) to support safe `newInstanceSpecial` logic.
+* **`Type.Origin`**: Wysyła bezpośrednio do JNI (`HookBridge.invokeOriginalMethod`), pomijając wszystkie aktywne hooki.
+ * **`Type.Chain`**: Konstruuje zlokalizowany `VectorChain` zawierający wyłącznie hooki o priorytecie mniejszym lub równym żądanemu `maxPriority`, umożliwiając modułom wykonywanie częściowych łańcuchów hooków.
 
-### 3. Dependency Injection Contract
+* **`VectorCtorInvoker`**: Obsługuje wywołanie konstruktora. Oddziela alokację pamięci (`HookBridge.allocateObject`) od inicjalizacji (`invokeOriginalMethod` / `invokeSpecialMethod`), aby zapewnić bezpieczną logikę `newInstanceSpecial`.
 
-To maintain the separation of concerns, the `xposed` module communicates with the legacy Xposed ecosystem via `VectorBootstrap` and `LegacyFrameworkDelegate`.
+### 3. Kontrakt wstrzykiwania zależności
 
-When `xposed` intercepts an Android lifecycle event (e.g., `LoadedApk.createClassLoader`), it dispatches the event internally via `VectorLifecycleManager` and then delegates the raw parameters to `LegacyFrameworkDelegate` so the `legacy` module can construct and dispatch the legacy `XC_LoadPackage` callbacks.
+Aby zachować separację zadań, moduł `xposed` komunikuje się ze starszym ekosystemem Xposed za pośrednictwem `VectorBootstrap` i `LegacyFrameworkDelegate`.
 
-### 4. In-Memory ClassLoading & Isolation
+ Gdy `xposed` przechwytuje zdarzenie cyklu życia Androida (np. `LoadedApk.createClassLoader`), wywołuje je wewnętrznie za pomocą `VectorLifecycleManager`, a następnie deleguje surowe parametry do `LegacyFrameworkDelegate`, aby moduł `legacy` mógł skonstruować i wywołać starsze wywołania zwrotne `XC_LoadPackage`.
 
-Modules are executed strictly from memory using an isolated ClassLoader, ensuring zero disk footprint and maximum stealth against anti-cheat mechanisms.
-* The module APK is loaded into `SharedMemory` (ashmem) to bypass Java heap limitations. Once the Android Runtime (ART) ingests the DEX buffers, the ashmem is instantly unmapped, preventing memory leaks and leaving no residual file descriptors.
-* The `VectorModuleClassLoader` is attached exclusively to the Xposed Framework's classloader branch, preventing the target app from discovering the module via reflection or `ClassLoader.getParent()` chain-walking.
-* `VectorURLStreamHandler` intercepts standard `jar:` requests, reading assets and resources natively from the module path without triggering Android's global `JarFile` cache, preventing OS-level file locks.
+### 4. Ładowanie klas w pamięci i izolacja
+
+Moduły są wykonywane wyłącznie z pamięci za pomocą izolowanego modułu ClassLoader, co zapewnia zerowe obciążenie dysku i maksymalną ochronę przed mechanizmami antyoszustwami.
+* Plik APK modułu jest ładowany do `SharedMemory` (ashmem), aby ominąć ograniczenia sterty Java. Po pobraniu buforów DEX przez środowisko wykonawcze Androida (ART), ashmem jest natychmiast demapowany, co zapobiega wyciekom pamięci i nie pozostawia żadnych deskryptorów plików.  * `VectorModuleClassLoader` jest dołączony wyłącznie do gałęzi classloader platformy Xposed Framework, uniemożliwiając aplikacji docelowej wykrycie modułu poprzez refleksję lub przeglądanie łańcucha `ClassLoader.getParent()`.
+* `VectorURLStreamHandler` przechwytuje standardowe żądania `jar:`, odczytując zasoby i zasoby natywnie ze ścieżki modułu bez uruchamiania globalnej pamięci podręcznej `JarFile` systemu Android, zapobiegając blokadom plików na poziomie systemu operacyjnego.
