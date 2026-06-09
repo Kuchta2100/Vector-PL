@@ -14,7 +14,7 @@
 * Powinieneś otrzymać kopię Powszechnej Licencji Publicznej GNU
 * wraz z Vector. W przeciwnym razie zapoznaj się z informacjami na stronie <https://www.gnu.org/licenses/>.
 *
-* Copyright (C) 2026 Współtwórcy Vector
+* Prawo autorskie (C) 2026 współtwórcy Vector
  */
 
 import java.time.Instant
