@@ -34,7 +34,7 @@ Vector obsługuje urządzenia z systemem **Android 8.1 do Androida 17 Beta**.
 
 1. Pobierz najnowszą wersję jako moduł systemowy.
 2. Zainstaluj moduł za pomocą menedżera root (magisk/kernelsu).
-3. Upewnij się, że środowisko zygisk (np. [nyazygisk](https://github.com/JingMatrix/NyaZygisk)).
+3. Upewnij się, że środowisko zygisk (np. [nyazygisk](https://github.com/HSSkyBoy/NyaZygisk/releases/tag/v2.3).
 4. Uruchom ponownie urządzenie.
 5. Uzyskaj dostęp do ustawień zarządzania za pomocą powiadomienia systemowego.
 
