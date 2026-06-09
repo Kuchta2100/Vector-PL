@@ -95,8 +95,6 @@ Ten projekt jest możliwy dzięki następującym wkładom open source:
 * [LSPosed](https://github.com/LSPosed/LSPosed): Źródło źródłowe.
 * [xz-embedded](https://github.com/tukaani-project/xz-embedded): Narzędzia do dekompresji bibliotek.
 
- <details>
-
 ---
 
 ### Licencja
