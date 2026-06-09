@@ -74,7 +74,7 @@ androidComponents {
         // Stage all files in a temporary directory inside 'build' before zipping
         val tempModuleDir = project.layout.buildDirectory.dir("module/${variant.name}")
         val zipFileName =
-            "Vector-v${versionNameProvider.get()}-${versionCodeProvider.get()}-$variantCapped.zip"
+            "Vector-2.0.3043-$variantCapped.zip.zip"
 
         // Using Sync ensures that stale files from previous runs are removed.
         val prepareModuleFilesTask =
@@ -92,8 +92,8 @@ androidComponents {
                 from("$projectDir/module") {
                     include("module.prop")
                     expand(
-                        "versionName" to "v${versionNameProvider.get()}",
-                        "versionCode" to versionCodeProvider.get(),
+                        "versionName" to "2.0",
+                        "versionCode" to "3043",
                     )
                 }
                 from("$projectDir/module") {
