@@ -9,7 +9,7 @@ mkdir "$TMPDIR_FOR_VERIFY"
 abort_verify() {
   ui_print "************************************************************"
   ui_print "! $1"
-  ui_print "! Ten plik zip może być uszkodzony. Spróbuj pobrać ponownie."
+  ui_print "! Ten plik zip może być uszkodzony. Spróbuj pobrać go ponownie."
   abort    "************************************************************"
 }
 
@@ -18,7 +18,7 @@ extract() {
   local zip="$1"
   local file="$2"
   local dir="$3"
-  local junk_paths="${4:-false}" # Domyślnie fałsz, jeśli nie podano
+  local junk_paths="${4:-false}" # Domyślnie false, jeśli nie podano
   local opts="-o"
   local file_path hash_path file_basename
 
@@ -48,7 +48,7 @@ extract() {
     abort_verify "Nie udało się zweryfikować $file"
   fi
 
-  ui_print "- Zweryfikowany $file"
+  ui_print "- Zweryfikowano $file"
 }
 # =========================================================
 
@@ -80,7 +80,7 @@ case "$ARCH" in
 esac
 ui_print "- Platforma urządzenia: $ARCH ($ABI32 / $ABI64)"
 
-ui_print "- Wyodrębnianie plików modułu głównego"
+ui_print "- Wyodrębnianie głównych plików modułu"
 for file in module.prop action.sh service.sh uninstall.sh sepolicy.rule framework/lspd.dex cli daemon.apk daemon manager.apk; do
     extract "$ZIPFILE" "$file" "$MODPATH"
 done
