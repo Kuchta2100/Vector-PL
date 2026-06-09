@@ -95,14 +95,14 @@ subprojects {
                 if (this is ApplicationDefaultConfig) {
                     targetSdk = androidTargetSdkVersion
 
-                    versionCode ="3043",
-                    versionName ="2.0",
+                    versionCode =3043
+                    versionName =2.0
                 }
 
                 val flags =
                     listOf(
-                        "-DVERSION_CODE="3043",
-                        "-DVERSION_NAME="2.0", 
+                        "-DVERSION_CODE=\"3043\" ",
+                        "-DVERSION_NAME=\"2.0\"", 
                     )
 
                 val args =
