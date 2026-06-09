@@ -42,7 +42,7 @@ Vector obsługuje urządzenia z systemem **Android 8.1 do Androida 17 Beta**.
 
 ### Pobieranie
 
-| Kanał | źródło |
+| Kanał | Źródło |
 | :--- | :--- |
 | **Wersje stabilne** | [Wersje GitHub](https://github.com/JingMatrix/Vector/releases) |
 | **Kompilacje Canary (CI)** | [Akcje GitHub](https://github.com/JingMatrix/Vector/actions/workflows/core.yml?query=branch%3Amaster) |
@@ -94,14 +94,6 @@ Ten projekt jest możliwy dzięki następującym wkładom open source:
 * [xz-embedded](https://github.com/tukaani-project/xz-embedded): Narzędzia do dekompresji bibliotek.
 
  <details>
-<summary>Zależności starsze i historyczne</summary>
-
-- ~~[Riru](https://github.com/RikkaApps/Riru)~~
-- ~~[SandHook](https://github.com/ganyao114/SandHook/)~~
-- ~~[YAHFA](https://github.com/rk700/YAHFA)~~
-- ~~[dexmaker](https://github.com/linkedin/dexmaker)~~
-- ~~[DexBuilder](https://github.com/LSPosed/DexBuilder)~~
-</details>
 
 ---
 
