@@ -15,8 +15,7 @@
 ~ Powinieneś otrzymać kopię Powszechnej Licencji Publicznej GNU
 ~ wraz z Vector. W przeciwnym razie zapoznaj się z informacjami na stronie <https://www.gnu.org/licenses/>.
 ~
-~ Copyright (C) 2026 Współtwórcy Vector
-  -->
+~ Prawo autorskie (C) 2026 współtwórcy Vector -->
 <resources xmlns:tools="http://schemas.android.com/tools" tools:keep="@string/xposed_module_updated_notification_*,@string/module_is_not_activated_*">
     <!-- Główne -->
     <string name="overview">Przegląd</string>
@@ -37,10 +36,10 @@
     <string name="module_repo_published_time">Opublikowano w %s</string>
     <string name="module_repo_updated_time">Zaktualizowano w %s</string>
     <plurals name="module_repo_upgradable">
-        <item quantity="one">%d moduł z możliwością aktualizacji</item>
-        <item quantity="few">%d moduły z możliwością aktualizacji</item>
-        <item quantity="many">%d modułów z możliwością aktualizacji</item>
-        <item quantity="other">%d modułów z możliwością aktualizacji</item>
+        <item quantity="one">%d moduł do aktualizacji</item>
+        <item quantity="few">%d moduły do aktualizacji</item>
+        <item quantity="many">%d modułów do aktualizacji</item>
+        <item quantity="other">%d modułów do aktualizacji</item>
     </plurals>
     <string name="about_view_source_code"><![CDATA[Zobacz kod źródłowy na %1$s<br/>Dołącz do naszego kanału %2$s]]></string>
     <string name="translators" comment="Dear translators, please add your home page here following the format. There can be more than one translator. So feel free to append yourself.">Łukasz Kuchta</string>
@@ -168,7 +167,7 @@
     <!-- Moduły i Lista aplikacji-->
     <string name="modules_other_app">Wyświetl w innej aplikacji</string>
     <string name="module_app_info">Informacje o aplikacji</string>
-    <string name="list_empty">¯\\\\_(ツ)_\/¯\nNic tu nie ma</string>
+    <string name="list_empty">¯\_(ツ)_/¯\nNic tu nie ma</string>
     <!-- Ustawienia-->
     <string name="settings_group_framework">Struktura</string>
     <string name="settings_disable_verbose_log">Wyłącz szczegółowe dzienniki</string>
@@ -208,9 +207,9 @@
     <string name="settings_update_channel">Kanał aktualizacji</string>
     <string name="update_channel_stable">Stabilny</string>
     <string name="update_channel_bate">Beta</string>
-    <string name="update_channel_nightly">Kompilacja nocna</string>
+    <string name="update_channel_nightly">Nocny</string>
     <!-- Repozytorium modułów-->
-    <string name="module_readme">Przeczytaj mnie</string>
+    <string name="module_readme">Przeczytaj</string>
     <string name="module_releases">Wydania</string>
     <string name="module_information">Informacje</string>
     <string name="module_information_homepage">Strona główna</string>
@@ -221,7 +220,11 @@
     <string name="module_release_load_more">Pokaż starsze wersje</string>
     <string name="module_release_no_more">Nie ma więcej wersji</string>
     <string name="repo_load_failed">Nie udało się załadować repozytorium modułu: %s</string>
-    <string name="sort_upgradable_first">Możliwość uaktualnienia w pierwszej kolejności</string>
+    <string name="sort_upgradable_first">Najpierw aktualizacje</string>
+    <string name="sort_by_name">Według nazwy aplikacji</string>
+    <string name="sort_by_update_time">Według czasu aktualizacji</string> 
+    <string name="sort_by_package_name">Według nazwy pakietu</string>
+    <string name="sort_by_install_time">Według czasu instalacji</string>
     <string name="installed">Zainstalowane</string>
     <plurals name="module_release_assets_download_count">
         <item quantity="one">%d pobrany</item>
