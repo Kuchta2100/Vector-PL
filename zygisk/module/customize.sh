@@ -33,14 +33,14 @@ extract() {
     hash_path="${TMPDIR_FOR_VERIFY}/$file.sha256"
   fi
 
-  # Extract the file and its hash
+  # Wypakuj plik i jego skrót
   unzip $opts "$zip" "$file" -d "$dir" >/dev/null 2>&1
   [ -f "$file_path" ] || abort_verify "Wyodrębniony plik $file nie istnieje"
 
   unzip $opts "$zip" "$file.sha256" -d "${TMPDIR_FOR_VERIFY}" >/dev/null 2>&1
   [ -f "$hash_path" ] || abort_verify "Plik skrótu $file.sha256 nie istnieje"
 
-  # Read the expected hash and verify it
+  # Odczytaj oczekiwany skrót i zweryfikuj go
   local expected_hash
   read -r expected_hash < "$hash_path"
   expected_hash="${expected_hash%% *}" # Usuń wszystko po rzeczywistym ciągu skrótu
@@ -55,7 +55,7 @@ extract() {
 VERSION=$(grep_prop version "${TMPDIR}/module.prop")
 ui_print "- Vector wersja ${VERSION}"
 
-# Disable existing LSPosed installation
+# Wyłącz istniejącą instalację LSPosed
 LSPOSED_DIR="/data/adb/modules/zygisk_lsposed"
 if [ -d "$LSPOSED_DIR" ]; then
     ui_print "***************************************************"
@@ -64,7 +64,7 @@ if [ -d "$LSPOSED_DIR" ]; then
     ui_print "***************************************************"
 fi
 
-# 1. Map architecture to standard ABI paths, eliminating duplicate logic
+# 1. Mapowanie architektury do standardowych ścieżek ABI, eliminując duplikację logiki
 case "$ARCH" in
     arm|arm64)
         ABI32="armeabi-v7a"
