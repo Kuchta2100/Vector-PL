@@ -81,22 +81,22 @@ jobs:
         if: success()
         id: prepareArtifact
         run: |
-          zygiskReleaseName=`ls zygisk/release/Vector-Release.zip | awk -F '(/|.zip)' '{print $3}'` && echo "zygiskReleaseName=$zygiskReleaseName" >> $GITHUB_OUTPUT
-          zygiskDebugName=`ls zygisk/release/Vector-Debug.zip | awk -F '(/|.zip)' '{print $3}'` && echo "zygiskDebugName=$zygiskDebugName" >> $GITHUB_OUTPUT
-          unzip zygisk/release/Vector-Release.zip -d Vector-*-Release
+          zygiskReleaseName=`ls zygisk/release/Vector-*-Release.zip | awk -F '(/|.zip)' '{print $3}'` && echo "zygiskReleaseName=$zygiskReleaseName" >> $GITHUB_OUTPUT
+          zygiskDebugName=`ls zygisk/release/Vector-*-Debug.zip | awk -F '(/|.zip)' '{print $3}'` && echo "zygiskDebugName=$zygiskDebugName" >> $GITHUB_OUTPUT
+          unzip zygisk/release/Vector-*-Release.zip -d Vector-*-Release
           unzip zygisk/release/Vector-*-Debug.zip -d Vector-Debug
 
       - name: Upload zygisk release
         uses: actions/upload-artifact@v6
         with:
           name: ${{ steps.prepareArtifact.outputs.zygiskReleaseName }}
-          path: "./Vector-*-Release/*"
+          path: "./Vector-Release/*"
 
       - name: Upload zygisk debug
         uses: actions/upload-artifact@v6
         with:
           name: ${{ steps.prepareArtifact.outputs.zygiskDebugName }}
-          path: "./Vector-*-Debug/*"
+          path: "./Vector-Debug/*"
 
       - name: Upload mappings
         uses: actions/upload-artifact@v6
