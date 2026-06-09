@@ -40,9 +40,9 @@ Vector obsługuje urządzenia z systemem **Android 8.1 do Androida 17 Beta**.
 
 --
 
-### pobrań
+### Pobieranie
 
-| kanał | źródło |
+| Kanał | źródło |
 | :--- | :--- |
 | **Wersje stabilne** | [Wersje GitHub](https://github.com/JingMatrix/Vector/releases) |
 | **Kompilacje Canary (CI)** | [Akcje GitHub](https://github.com/JingMatrix/Vector/actions/workflows/core.yml?query=branch%3Amaster) |
