@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?><!--
-  ~ This file is part of Vector.
-  ~
-  ~ Vector is free software: you can redistribute it and/or modify
-  ~ it under the terms of the GNU General Public License as published by
-  ~ the Free Software Foundation, either version 3 of the License, or
-  ~ (at your option) any later version.
-  ~
-  ~ Vector is distributed in the hope that it will be useful,
-  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
-  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-  ~ GNU General Public License for more details.
-  ~
-  ~ You should have received a copy of the GNU General Public License
-  ~ along with Vector.  If not, see <https://www.gnu.org/licenses/>.
-  ~
-  ~ Copyright (C) 2026 Vector Contributors
+~ Ten plik jest częścią Vector.
+~
+~ Vector jest wolnym oprogramowaniem: możesz je redystrybuować i/lub modyfikować
+~ zgodnie z warunkami Powszechnej Licencji Publicznej GNU, opublikowanej przez
+~ Fundację Wolnego Oprogramowania, w wersji 3 Licencji lub
+~ (według własnego wyboru) dowolnej późniejszej wersji.
+~
+~ Vector jest rozpowszechniany z nadzieją, że okaże się użyteczny,
+~ jednak BEZ ŻADNEJ GWARANCJI; nawet bez domniemanej gwarancji
+~ PRZYDATNOŚCI HANDLOWEJ lub PRZYDATNOŚCI DO OKREŚLONEGO CELU. Więcej informacji można znaleźć w
+~ Powszechnej Licencji Publicznej GNU.
+~
+~ Powinieneś otrzymać kopię Powszechnej Licencji Publicznej GNU
+~ wraz z Vectorem. W przeciwnym razie zapoznaj się z informacjami na stronie <https://www.gnu.org/licenses/>.
+~
+~ Prawo autorskie (C) 2026 współtwórcy Vector
   -->
 
 <resources>
@@ -29,11 +29,11 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
 
-        <!-- Preference title -->
+        <!-- Tytuł preferencji -->
         <item name="android:textAppearanceListItem">?textAppearanceSubtitle1</item>
-        <!-- Preference category title -->
+        <!-- Tytuł kategorii preferencji -->
         <item name="android:colorAccent">?colorPrimary</item>
-        <!-- Preference switch -->
+        <!-- Przełącznik preferencji -->
         <item name="android:colorControlActivated">?colorPrimary</item>
     </style>
 
@@ -45,11 +45,11 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
 
-        <!-- Preference title -->
+        <!-- Tytuł preferencji -->
         <item name="android:textAppearanceListItem">?textAppearanceSubtitle1</item>
-        <!-- Preference category title -->
+        <!-- Tytuł kategorii preferencji -->
         <item name="android:colorAccent">?colorPrimary</item>
-        <!-- Preference switch -->
+        <!-- Przełącznik preferencji -->
         <item name="android:colorControlActivated">?colorPrimary</item>
     </style>
 
