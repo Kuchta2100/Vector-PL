@@ -17,8 +17,8 @@ android {
     defaultConfig {
         consumerProguardFiles("consumer-rules.pro")
         buildConfigField("String", "FRAMEWORK_NAME", """"${rootProject.name}"""")
-        buildConfigField("String", "VERSION_NAME", """"${versionNameProvider.get()}"""")
-        buildConfigField("long", "VERSION_CODE", versionCodeProvider.get() + "L")
+        buildConfigField("String", "VERSION_NAME", "\"2.0\"")
+buildConfigField("long", "VERSION_CODE", "3043")
     }
 
     sourceSets { named("main") { java.srcDirs("src/main/kotlin", "libxposed/api/src/main/java") } }
