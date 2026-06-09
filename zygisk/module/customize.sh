@@ -53,7 +53,7 @@ extract() {
 # =========================================================
 
 VERSION=$(grep_prop version "${TMPDIR}/module.prop")
-ui_print "- Vector wersja ${VERSION}"
+ui_print "- Wersja Vector ${VERSION}"
 
 # Wyłącz istniejącą instalację LSPosed
 LSPOSED_DIR="/data/adb/modules/zygisk_lsposed"
