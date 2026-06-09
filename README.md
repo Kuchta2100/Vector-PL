@@ -1,110 +1,100 @@
 <div align="center">
 
-# Vector Framework
+# Struktura Vector
 
-**A high-performance ART hooking framework for modern Android**
+**Wysokowydajna struktura do tworzenia grafiki dla nowoczesnego Androida**
 
-[![Build](https://img.shields.io/github/actions/workflow/status/JingMatrix/Vector/core.yml?branch=master&event=push&logo=github&label=Build)](https://github.com/JingMatrix/Vector/actions/workflows/core.yml?query=event%3Apush+branch%3Amaster+is%3Acompleted)
-[![Crowdin](https://img.shields.io/badge/Localization-Crowdin-blueviolet?logo=Crowdin)](https://crowdin.com/project/lsposed_jingmatrix)
-[![Download](https://img.shields.io/github/v/release/JingMatrix/Vector?color=orange&logoColor=orange&label=Download&logo=DocuSign)](https://github.com/JingMatrix/Vector/releases/latest)
-[![Total](https://shields.io/github/downloads/JingMatrix/Vector/total?logo=Bookmeter&label=Counts&logoColor=yellow&color=yellow)](https://github.com/JingMatrix/Vector/releases)
+[![build](https://img.shields.io/github/actions/workflow/status/JingMatrix/Vector/core.yml?branch=master&event=push&logo=github&label=Build)](https://github.com/JingMatrix/Vector/actions/workflows/core.yml?query=event%3Apush+branch%3Amaster+is%3Acompleted)
+[![Crowdin](https://img.shields.io/badge/Localization-Crowdin-blueviolet?logo=Crowdin)](https://crowdin.com/project/lsp  osed_jingmatrix)
+[![Pobierz](https://img.shields.io/github/v/release/JingMatrix/Vector?color=orange&logoColor=orange&label=Download&logo=DocuSign)](https://github.com/JingMatrix/Vector/releases/latest)
+[![Razem](https://shields.io/github/downloads/JingMatrix/Vector/total?logo=Bookmeter&label=Counts&logoColor=yellow&color=yellow)](https://github.com/JingMatrix/Vector/releases)
 
 </div>
 
 ---
 
-### Introduction
+### Wprowadzenie
 
-Vector is a Zygisk module providing an ART hooking framework that maintains API consistency with the original Xposed. It is engineered on top of [LSPlant](https://github.com/JingMatrix/LSPlant) to deliver a stable, native-level instrumentation environment.
+Vector to moduł Zygisk, który zapewnia framework do tworzenia hooków, zachowując spójność API z oryginalnym xposed. Został on opracowany na bazie [lsplant](https://github.com/JingMatrix/LSPlant), aby zapewnić stabilne środowisko instrumentacji na poziomie natywnym.
 
-The framework allows modules to modify system and application behavior in-memory. Because no APK files are modified, changes are non-destructive, easily reversible via reboot, and compatible across various ROMs and Android versions.
+Framework umożliwia modułom modyfikację działania systemu i aplikacji w pamięci. Ponieważ pliki APK nie są modyfikowane, zmiany są nieniszczące, łatwo odwracalne poprzez ponowne uruchomienie i kompatybilne z różnymi ROM-ami i wersjami Androida.
 
 ---
 
-### Compatibility
+### Zgodność
 
-Vector supports devices running **Android 8.1 through Android 17 Beta**.
+Vector obsługuje urządzenia z systemem **Android 8.1 do Androida 17 Beta**.
 
 > [!TIP]
-> This framework requires a recent installation of Magisk or KernelSU with Zygisk enabled.
+> Ten framework wymaga niedawnej instalacji Magisk lub KernelSU z włączonym Zygiskiem.
 
 ---
 
-### Installation
+### Instalacja
 
-1. Download the latest release as a system module.
-2. Install the module via your root manager (Magisk/KernelSU).
-3. Ensure a Zygisk environment (e.g., [NeoZygisk](https://github.com/JingMatrix/NeoZygisk)).
-4. Reboot the device.
-5. Access management settings via the system notification.
+1. Pobierz najnowszą wersję jako moduł systemowy.
+2. Zainstaluj moduł za pomocą menedżera root (magisk/kernelsu).
+3. Upewnij się, że środowisko zygisk (np. [neozygisk](https://github.com/JingMatrix/NeoZygisk)).
+4. Uruchom ponownie urządzenie.
+5. Uzyskaj dostęp do ustawień zarządzania za pomocą powiadomienia systemowego.
 
----
+--
 
-### Downloads
+### pobrań
 
-| Channel | Source |
+| kanał | źródło |
 | :--- | :--- |
-| **Stable Releases** | [GitHub Releases](https://github.com/JingMatrix/Vector/releases) |
-| **Canary (CI) Builds** | [GitHub Actions](https://github.com/JingMatrix/Vector/actions/workflows/core.yml?query=branch%3Amaster) |
+| **Wersje stabilne** | [Wersje GitHub](https://github.com/JingMatrix/Vector/releases) |
+| **Kompilacje Canary (CI)** | [Akcje GitHub](https://github.com/JingMatrix/Vector/actions/workflows/core.yml?query=branch%3Amaster) |
 
 > [!NOTE]
-> Debug builds are recommended for users encountering issues or performing troubleshooting.
-> We encourage users to test CI builds to help us identify bugs and accelerate development.
+> Wersje debugowe są zalecane użytkownikom napotykającym problemy lub rozwiązującym problemy.
+> Zachęcamy użytkowników do testowania wersji CI, aby pomóc nam identyfikować błędy i przyspieszać rozwój.
 
 > [!CAUTION]
-> GitHub requires users to be **logged in** to download CI artifacts.
+> GitHub wymaga od użytkowników **zalogowania się**, aby mogli pobrać artefakty CI.
 >
-> The link above is filtered to show only `master` branch builds.
-> Please note that builds from Pull Requests (PRs) are often unstable and potentially unsafe (depending on the authors); we recommend staying on the `master` branch for verified builds, unless you are asked to help our debugging sessions.
+> Powyższy link jest filtrowany i wyświetla tylko kompilacje z gałęzi `master`.
+> Należy pamiętać, że kompilacje z żądań ściągnięcia (PR) są często niestabilne i potencjalnie niebezpieczne (w zależności od autorów); zalecamy pozostanie na gałęzi `master` w przypadku zweryfikowanych kompilacji, chyba że zostaniesz poproszony o pomoc w naszych sesjach debugowania.
 
 ---
 
-### Support and Contribution
+### Wsparcie i wkład
 
-If you encounter issues or wish to help improve the project, please refer to the resources below.
+Jeśli napotkasz problemy lub chcesz pomóc w ulepszeniu projektu, zapoznaj się z poniższymi zasobami.
 
-*   **Troubleshooting:** Consult the [guide](https://github.com/JingMatrix/Vector/issues/123) before reporting bugs.
-*   **Discussions:** Join our community on [GitHub Discussions](https://github.com/JingMatrix/Vector/discussions).
-*   **Localization:** Help translate the project via [Crowdin](https://crowdin.com/project/lsposed_jingmatrix).
+* **Rozwiązywanie problemów:** Przed zgłoszeniem błędów zapoznaj się z [poradnikiem](https://github.com/JingMatrix/Vector/issues/123).
+* **Dyskusje:** Dołącz do naszej społeczności w [Dyskusjach GitHub](https://github.com/JingMatrix/Vector/discussions).
+* **Lokalizacja:** Pomóż w tłumaczeniu projektu za pośrednictwem [Crowdin](https://crowdin.com/project/lsposed_jingmatrix)
 
-> [!IMPORTANT]
-> Bug reports are only accepted if they are based on the **latest debug build**.
->
-> *Notice for Chinese speakers:*
->
-> 为了提高沟通效率，本项目仅接受英文 Issue。请使用 [DeepL](https://www.deepl.com/zh/translator) 或其他翻译工具提交您的反馈。
+### Zasoby dla programistów
 
----
+Vector obsługuje zarówno starsze, jak i nowsze standardy przechwytywania, aby zapewnić szeroką kompatybilność modułów.
 
-### Developer Resources
-
-Vector supports both legacy and modern hooking standards to ensure broad module compatibility.
-
-*   [Legacy Xposed API](https://api.xposed.info/)
-*   [Modern libxposed API](https://libxposed.github.io/api/)
-*   [Xposed Module Repository](https://github.com/Xposed-Modules-Repo)
+* [Nowoczesne API libxposed](https://libxposed.github.io/api/)
+* [Repozytorium modułów Xposed](https://github.com/Xposed-Modules-Repo)
 
 > [!NOTE]
-> Vector supports the `libxposed` API via two git submodules: the [module API](./xposed/) and the [service API](./services/).
+>Vector obsługuje API `libxposed` za pośrednictwem dwóch podmodułów Git: [API modułów](./xposed/) i [API usług](./services/).
 >
-> A successful GitHub Actions build of the [master](https://github.com/JingMatrix/Vector/tree/master) branch indicates that Vector fully supports these APIs at those specific commits.
-> Developers are suggested to check out the same commits as Vector.
+> Udana kompilacja gałęzi [master](https://github.com/JingMatrix/Vector/tree/master) w GitHub Actions wskazuje, że Vector w pełni obsługuje te API w tych konkretnych commitach.
+> Zaleca się, aby programiści sprawdzili te same commity, co Vector.
 
 ---
 
-### Credits
+### Podziękowania
 
-This project is made possible by the following open-source contributions:
+Ten projekt jest możliwy dzięki następującym wkładom open source:
 
-*   [Magisk](https://github.com/topjohnwu/Magisk/): The foundation of Android customization.
-*   [LSPlant](https://github.com/JingMatrix/LSPlant): The core ART hooking engine.
-*   [XposedBridge](https://github.com/rovo89/XposedBridge): The standard Xposed APIs.
-*   [Dobby](https://github.com/JingMatrix/Dobby): Inline hooking implementation.
-*   [LSPosed](https://github.com/LSPosed/LSPosed): Upstream source.
-*   [xz-embedded](https://github.com/tukaani-project/xz-embedded): Library decompression utilities.
+* [Magisk](https://github.com/topjohnwu/Magisk/): Podstawa personalizacji Androida.
+* [LSPlant](https://github.com/JingMatrix/LSPlant): Główny silnik przechwytywania ART.
+ * [XposedBridge](https://github.com/rovo89/XposedBridge): Standardowe API Xposed.
+* [Dobby](https://github.com/JingMatrix/Dobby): Implementacja przechwytywania inline.
+* [LSPosed](https://github.com/LSPosed/LSPosed): Źródło źródłowe.
+* [xz-embedded](https://github.com/tukaani-project/xz-embedded): Narzędzia do dekompresji bibliotek.
 
-<details>
-<summary>Legacy and Historical Dependencies</summary>
+ <details>
+<summary>Zależności starsze i historyczne</summary>
 
 - ~~[Riru](https://github.com/RikkaApps/Riru)~~
 - ~~[SandHook](https://github.com/ganyao114/SandHook/)~~
@@ -115,6 +105,6 @@ This project is made possible by the following open-source contributions:
 
 ---
 
-### License
+### Licencja
 
-Vector is licensed under the [GNU General Public License v3](http://www.gnu.org/copyleft/gpl.html).
+Vector jest licencjonowany na podstawie [GNU General Public License v3](http://www.gnu.org/copyleft/gpl.html).
