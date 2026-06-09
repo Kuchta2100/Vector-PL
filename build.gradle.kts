@@ -96,7 +96,7 @@ subprojects {
                     targetSdk = androidTargetSdkVersion
 
                     versionCode =3043
-                    versionName =2.0
+                    versionName ="2.0"
                 }
 
                 val flags =
