@@ -42,7 +42,7 @@
         <item quantity="other">%d modułów do aktualizacji</item>
     </plurals>
     <string name="about_view_source_code"><![CDATA[Zobacz kod źródłowy na %1$s<br/>Dołącz do naszego kanału %2$s]]></string>
-    <string name="translators" comment="Dear translators, please add your home page here following the format. There can be more than one translator. So feel free to append yourself.">Łukasz Kuchta</string>
+    <string name="translators" comment=„Drodzy tłumacze, dodajcie tutaj swoją stronę główną, stosując się do podanego formatu. Może być więcej niż jeden tłumacz. Możecie więc śmiało dodawać swoje.">Łukasz Kuchta</string>
     <string name="install">Zainstaluj</string>
     <string name="install_summary">Naciśnij, aby zainstalować Vector</string>
     <string name="not_installed">Nie zainstalowane</string>
@@ -60,7 +60,7 @@
     <string name="developer_warning_title">Wskazówki dla programistów modułów</string>
     <string name="developer_warning_summary">Proszę wyłączyć optymalizację wdrażania w Android Studio, lub użyć polecenia \'gradlew installDebug\', aby zainstalować. W przeciwnym razie plik APK modułu nie zostanie zaktualizowany.</string>
     <string name="info_api_version">Wersja interfejsu programowania aplikacji</string>
-    <string name="info_framework_version">Wersja struktury</string>
+    <string name="info_framework_version">Wersja modułu</string>
     <string name="info_manager_package_name">Nazwa pakietu menedżera</string>
     <string name="info_system_version">Wersja systemu</string>
     <string name="info_device">Urządzenie</string>
@@ -84,7 +84,7 @@
     <string name="parasitic_welcome_summary_no_shortcut_support">Używasz menadżera pasożytniczego, który możesz otworzyć z powiadomienia.</string>
     <string name="create_shortcut">Utwórz skrót</string>
     <string name="never_show">Nigdy nie pokazuj</string>
-    <string name="app_welcome">Zalecany menedżer pasożytniczy</string>
+    <string name="app_welcome">Zalecany jest menedżer pasożytniczy</string>
     <string name="app_welcome_summary">Vector obsługuje teraz pasożytnictwo systemowe, aby uniknąć wykrycia. Menedżer pasożytniczy można uruchomić z poziomu powiadomienia. Zaleca się odinstalowanie bieżącej aplikacji.</string>
     <!-- Dzienniki-->
     <string name="menuSaveToSd">Zapisz</string>
@@ -93,22 +93,22 @@
     <string name="logs_saving">Zapisywanie dziennika, poczekaj</string>
     <string name="logs_saved">Dzienniki zapisane</string>
     <string name="logs_save_failed2">Nie udało się zapisać:\n%s</string>
-    <string name="menuClearLog">Wyczyść dziennik teraz</string>
+    <string name="menuClearLog">Wyczyść dzienniki teraz</string>
     <string name="logs_cleared">Dzienniki zostały pomyślnie wyczyszczone.</string>
     <string name="scroll_top">Przewiń na górę</string>
     <string name="loading">Ładowanie…</string>
     <string name="scroll_bottom">Przewiń na dół</string>
     <string name="menuReload">Przeładuj</string>
-    <string name="logs_clear_failed_2">Nie udało się wyczyścić dziennika</string>
+    <string name="logs_clear_failed_2">Nie udało się wyczyścić dzienników</string>
     <string name="menu_enable_word_wrap">Zawijanie wierszy</string>
-    <string name="enabled_verbose_log">Szczegółowy dziennik włączony</string>
-    <string name="disabled_verbose_log">Szczegółowy dziennik wyłączony</string>
+    <string name="enabled_verbose_log">Szczegółowe dzienniki  są włączone</string>
+    <string name="disabled_verbose_log">Szczegółowe dzienniki są wyłączone</string>
     <!-- Moduły -->
     <string name="module_empty_description">(nie podano opisu)</string>
-    <string name="warning_xposed_min_version">Ten moduł wymaga nowszej wersji Xposed (%d) przez co nie może być aktywowany</string>
-    <string name="warning_target_version_higher">Ten moduł został zaprojektowany dla nowej wersji Xposed (%d) i dlatego niektóre funkcje mogą nie działać</string>
-    <string name="no_min_version_specified">Ten moduł nie określa wymaganej wersji Xposed.</string>
-    <string name="warning_min_version_too_low">Ten moduł został utworzony dla Xposed w wersji %1$d, ale ze względu na niekompatybilne zmiany w wersji %2$d, został wyłączony</string>
+    <string name="warning_xposed_min_version">Ten moduł wymaga nowszej wersji xposed (%d) przez co nie może być aktywowany</string>
+    <string name="warning_target_version_higher">Ten moduł został zaprojektowany dla nowej wersji xposed (%d) i dlatego niektóre funkcje mogą nie działać</string>
+    <string name="no_min_version_specified">Ten moduł nie określa wymaganej wersji xposed.</string>
+    <string name="warning_min_version_too_low">Ten moduł został utworzony dla xposed w wersji %1$d, ale ze względu na niekompatybilne zmiany w wersji %2$d, został wyłączony</string>
     <string name="warning_installed_on_external_storage">Ten moduł nie może być załadowany, ponieważ jest zainstalowany na karcie SD, przenieś go do pamięci wewnętrznej</string>
     <string name="module_uninstall">Odinstaluj</string>
     <string name="module_settings">Ustawienia modułu</string>
@@ -124,7 +124,7 @@
     <string name="expand">rozwiń</string>
     <string name="collapse">zwiń</string>
     <!-- Lista aplikacji -->
-    <string name="compile_speed">Ponownie zoptymalizuj</string>
+    <string name="compile_speed">Zoptymalizuj ponownie</string>
     <string name="compile_speed_msg">Optymalizowanie…</string>
     <string name="compile_done">Optymalizacja zakończona</string>
     <string name="app_launch">Uruchom to</string>
@@ -150,8 +150,8 @@
     <string name="update_available">Dostępna aktualizacja: %1$s</string>
     <string name="module_disabled_no_selection">Moduł %s został wyłączony, ponieważ nie wybrano żadnej aplikacji.</string>
     <string name="android_framework">Struktura systemu</string>
-    <string name="menu_backup_and_restore">Kopia zapasowa</string>
-    <string name="menu_backup">Kopia zapasowa</string>
+    <string name="menu_backup_and_restore">Kopia</string>
+    <string name="menu_backup">Wykonaj kopię</string>
     <string name="menu_restore">Przywróć</string>
     <string name="force_stop">Wymuś zatrzymanie</string>
     <string name="force_stop_dlg_title">Wymusić zatrzymanie?</string>
