@@ -162,7 +162,7 @@
     <!-- Moduły i Lista aplikacji-->
     <string name="modules_other_app">Wyświetl w innej aplikacji</string>
     <string name="module_app_info">Informacje o aplikacji</string>
-    <string name="list_empty">¯\_(ツ)_/¯\nNic tu nie ma</string>
+    <string name="list_empty">¯\\_(ツ)_/¯\nNic tu nie ma</string>
     <!-- Ustawienia-->
     <string name="settings_group_framework">Struktura</string>
     <string name="settings_disable_verbose_log">Wyłącz szczegółowe dzienniki</string>
