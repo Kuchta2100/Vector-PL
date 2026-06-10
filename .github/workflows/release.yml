@@ -1,0 +1,61 @@
+name: Vector-PL
+
+on:
+  push:
+    branches: [ PL ]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Set up JDK 21
+      uses: actions/setup-java@v3
+      with:
+        java-version: 21
+        distribution: 'temurin'
+        cache: 'gradle'
+
+    - name: Write key
+      if: github.event_name != 'pull_request' && (github.ref == 'refs/heads/PL' || github.event_name == 'workflow_dispatch')
+      run: |
+        if [ ! -z "${{ secrets.SIGNING_KEY }}" ]; then
+        echo releaseStorePassword='${{ secrets.KEY_STORE_PASSWORD }}' >> gradle.properties
+        echo releaseKeyAlias='${{ secrets.ALIAS }}' >> gradle.properties
+        echo releaseKeyPassword='${{ secrets.KEY_PASSWORD }}' >> gradle.properties
+        echo releaseStoreFile='key.jks' >> gradle.properties
+        echo ${{ secrets.SIGNING_KEY }} | base64 --decode > key.jks
+        fi
+
+    - name: Build with Gradle
+      run: ./gradlew assembleRelease assembleDebug
+
+    - name: Rename zip
+      run: |
+        mv app/build/outputs/zip/release/app-release.zip app/build/outputs/zip/release/Vector-PL.zip
+        mv app/build/outputs/zip/debug/app-debug.zip app/build/outputs/zip/debug/Vector-PL-debug.zip
+
+    - name: Upload artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: outputs
+        path: app/build/outputs/zip
+
+    - name: Upload to Releases
+      if: github.event_name != 'pull_request' && (github.ref == 'refs/heads/PL' || github.event_name == 'workflow_dispatch')
+      uses: ncipollo/release-action@v1
+      with:
+        artifacts: "app/build/outputs/zip/release/Vector-PL.zip,app/build/outputs/zip/debug/Vector-PL-debug.zip"
+        tag: "2.0"
+        name: "Vector-PL 2.0.3043"
+        allowUpdates: "true"
+        token: "${{ secrets.GITHUB_TOKEN }}"
