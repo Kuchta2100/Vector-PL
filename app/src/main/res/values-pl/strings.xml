@@ -42,7 +42,7 @@
         <item quantity="other">%d modułów do aktualizacji</item>
     </plurals>
     <string name="about_view_source_code"><![CDATA[Zobacz kod źródłowy na %1$s<br/>Dołącz do naszego kanału %2$s]]></string>
-    <string name="translators" comment=„Drodzy tłumacze, dodajcie tutaj swoją stronę główną, stosując się do podanego formatu. Może być więcej niż jeden tłumacz. Możecie więc śmiało dodawać swoje.">Łukasz Kuchta</string>
+    <string name="translators" comment="Drodzy tłumacze, dodajcie tutaj swoją stronę główną, stosując się do podanego formatu. Może być więcej niż jeden tłumacz. Możecie więc śmiało dodawać swoje.">Łukasz Kuchta</string>
     <string name="install">Zainstaluj</string>
     <string name="install_summary">Naciśnij, aby zainstalować Vector</string>
     <string name="not_installed">Nie zainstalowane</string>
