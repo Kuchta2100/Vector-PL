@@ -3,5 +3,5 @@ name=Zygisk Vector
 version=${versionName} (${versionCode})
 versionCode=${versionCode}
 author=JingMatrix, Łukasz Kuchta (fork)
-description=Nowoczesny, zgodny z Xposed framework do podłączania aplikacji na Androida (Android 8.1–17).
+description=Nowoczesny moduł zygisk do podłączania aplikacji na Androida (Android 8.1–17).
 updateJson=https://raw.githubusercontent.com/JingMatrix/Vector/master/zygisk/update.json
