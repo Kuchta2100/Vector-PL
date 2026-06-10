@@ -24,7 +24,7 @@ Vector umożliwia modułom modyfikację działania systemu i aplikacji w pamięc
 Vector obsługuje urządzenia z systemem **Android 8.1 do Androida 17 Beta**.
 
 > [!TIP]
-> Vector wymaga najnowszej instalacji Magisk lub KernelSU z włączonym zygiskiem.
+> Vector wymaga zainstalowania najnowszej wersji Magisk lub KernelSU z włączonym zygiskiem.
 
 ---
 
@@ -47,13 +47,13 @@ Vector obsługuje urządzenia z systemem **Android 8.1 do Androida 17 Beta**.
 
 > [!NOTE]
 > Wersje debugowe są zalecane użytkownikom napotykającym problemy lub rozwiązującym problemy.
-> Zachęcamy użytkowników do testowania wersji CI, aby pomóc nam identyfikować błędy i przyspieszać rozwój.
+> Zachęcamy użytkowników do testowania wersji testowej, aby pomóc nam identyfikować błędy i przyspieszać rozwój.
 
 > [!CAUTION]
 > GitHub wymaga od użytkowników **zalogowania się**, aby mogli pobrać artefakty CI.
 >
-> Powyższy link jest filtrowany i wyświetla tylko kompilacje z gałęzi `master`.
-> Należy pamiętać, że kompilacje z żądań ściągnięcia (PR) są często niestabilne i potencjalnie niebezpieczne (w zależności od autorów); zalecamy pozostanie na gałęzi `master` w przypadku zweryfikowanych kompilacji, chyba że zostaniesz poproszony o pomoc w naszych sesjach debugowania.
+> Powyższy link jest filtrowany i wyświetla tylko kompilacje z gałęzi `PL`.
+> Należy pamiętać, że kompilacje z żądań ściągnięcia (PR) są często niestabilne i potencjalnie niebezpieczne (w zależności od autorów); zalecamy pozostanie na gałęzi `PL` w przypadku zweryfikowanych kompilacji, chyba że zostaniesz poproszony o pomoc w naszych sesjach debugowania.
 
 ---
 
