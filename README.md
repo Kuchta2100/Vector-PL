@@ -13,9 +13,9 @@
 
 ### Wprowadzenie
 
-Vector to moduł Zygisk, który zapewnia framework do tworzenia hooków, zachowując spójność API z oryginalnym xposed. Został on opracowany na bazie [lsplant](https://github.com/JingMatrix/LSPlant), aby zapewnić stabilne środowisko instrumentacji na poziomie natywnym.
+Vector to moduł Zygisk, który zapewnia strukturę do tworzenia hooków, zachowując spójność API z oryginalnym xposed. Został on opracowany na bazie [LSPlant](https://github.com/JingMatrix/LSPlant), aby zapewnić stabilne środowisko instrumentacji na poziomie natywnym.
 
-Framework umożliwia modułom modyfikację działania systemu i aplikacji w pamięci. Ponieważ pliki APK nie są modyfikowane, zmiany są nieniszczące, łatwo odwracalne poprzez ponowne uruchomienie i kompatybilne z różnymi ROM-ami i wersjami Androida.
+Vector umożliwia modułom modyfikację działania systemu i aplikacji w pamięci. Ponieważ pliki APK nie są modyfikowane, zmiany są nieniszczące, łatwo odwracalne poprzez ponowne uruchomienie i kompatybilne z różnymi ROM-ami i wersjami Androida.
 
 ---
 
@@ -24,7 +24,7 @@ Framework umożliwia modułom modyfikację działania systemu i aplikacji w pami
 Vector obsługuje urządzenia z systemem **Android 8.1 do Androida 17 Beta**.
 
 > [!TIP]
-> Ten framework wymaga niedawnej instalacji Magisk lub KernelSU z włączonym Zygiskiem.
+> Vector wymaga najnowszej instalacji Magisk lub KernelSU z włączonym zygiskiem.
 
 ---
 
@@ -33,7 +33,7 @@ Vector obsługuje urządzenia z systemem **Android 8.1 do Androida 17 Beta**.
 1. Pobierz najnowszą wersję jako moduł systemowy.
 2. Zainstaluj moduł za pomocą menedżera root (magisk/kernelsu).
 3. Upewnij się, że środowisko zygisk (np. [nyazygisk](https://github.com/HSSkyBoy/NyaZygisk/releases/tag/v2.3).
-4. Uruchom ponownie urządzenie.
+4. Zrestartuj urządzenie.
 5. Uzyskaj dostęp do ustawień zarządzania za pomocą powiadomienia systemowego.
 
 --
@@ -42,8 +42,8 @@ Vector obsługuje urządzenia z systemem **Android 8.1 do Androida 17 Beta**.
 
 | Kanał | Źródło |
 | :--- | :--- |
-| **Wersje stabilne** | [Wersje GitHub](https://github.com/JingMatrix/Vector/releases) |
-| **Kompilacje Canary (CI)** | [Akcje GitHub](https://github.com/JingMatrix/Vector/actions/workflows/core.yml?query=branch%3Amaster) |
+| **Wersje stabilne** | [Wersje GitHub](https://github.com/Kuchta-2100/Vector-PL/releases) |
+| **Kompilacje testowe** | [Akcje GitHub](https://github.com/Kuchta2100/Vector-PL/actions/workflows/core.yml?query=branch%3APL) |
 
 > [!NOTE]
 > Wersje debugowe są zalecane użytkownikom napotykającym problemy lub rozwiązującym problemy.
