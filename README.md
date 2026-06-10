@@ -1,6 +1,6 @@
 <div align="center">
 
-# Struktura Vector
+# Zygisk Vector
 
 **Wysokowydajna struktura do tworzenia grafiki dla nowoczesnego Androida**
 
