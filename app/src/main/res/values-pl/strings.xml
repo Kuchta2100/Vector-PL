@@ -130,11 +130,6 @@
     <string name="app_launch">Uruchom to</string>
     <string name="compile_failed">Optymalizacja nie powiodła się: zwrócona wartość jest pusta</string>
     <string name="compile_failed_with_info">Optymalizacja nie powiodła się: </string>
-    <string name="sort_by_name">Nazwa aplikacji</string>
-    <string name="sort_by_package_name">Nazwa pakietu</string>
-    <string name="sort_by_install_time">Czas instalacji</string>
-    <string name="sort_by_update_time">Czas aktualizacji</string>
-    <string name="sort_reverse">Odwróć</string>
     <string name="menu_show_system_apps">Aplikacje systemowe</string>
     <string name="menu_sort">Sortowanie</string>
     <string name="enable_module">Włącz moduł</string>
@@ -225,6 +220,7 @@
     <string name="sort_by_update_time">Według czasu aktualizacji</string> 
     <string name="sort_by_package_name">Według nazwy pakietu</string>
     <string name="sort_by_install_time">Według czasu instalacji</string>
+    <string name="sort_reverse">Odwróć</string>
     <string name="installed">Zainstalowane</string>
     <plurals name="module_release_assets_download_count">
         <item quantity="one">%d pobrany</item>
