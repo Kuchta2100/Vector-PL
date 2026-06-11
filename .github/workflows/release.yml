@@ -61,7 +61,7 @@ jobs:
         mkdir -p app/build/outputs/zip/release
         mkdir -p app/build/outputs/zip/debug
         # Uwaga: sprawdź czy pliki faktycznie tu lądują, jeśli nie - użyj find
-        mv app/build/outputs/apk/release/*.apk app/build/outputs/zip/release/Vector-PL-2.0.3043.zip || true
+        mv app/build/outputs/apk/release/*.apk app/build/outputs/zip/release/Vector-PL-2.0.3043-release.zip || true
         mv app/build/outputs/apk/debug/*.apk app/build/outputs/zip/debug/Vector-PL-2.0.3043-debug.zip || true
 
     - name: Upload artifact
@@ -74,7 +74,7 @@ jobs:
       if: github.event_name != 'pull_request' && (github.ref == 'refs/heads/PL' || github.event_name == 'workflow_dispatch')
       uses: ncipollo/release-action@v1
       with:
-        artifacts: "app/build/outputs/zip/release/Vector-PL-2.0.3043.zip,app/build/outputs/zip/debug/Vector-PL-2.0.3043-debug.zip"
+        artifacts: "app/build/outputs/zip/release/Vector-PL-2.0.3043-release.zip,app/build/outputs/zip/debug/Vector-PL-2.0.3043-debug.zip"
         tag: "2.0"
         name: "Vector-PL 2.0.3043"
         allowUpdates: "true"
