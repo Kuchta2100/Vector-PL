@@ -1,6 +1,6 @@
 <div align="center">
 
-# Zygisk Vector
+# Zygisk Vector 2.0
 
 [![build](https://img.shields.io/github/actions/workflow/status/Kuchta2100/Vector-PL/core.yml?branch=PL&event=push&logo=github&label=Build)](https://github.com/Kuchta2100/Vector-PL/actions/workflows/core.yml?query=event%3Apush+branch%3APL+is%3Acompleted)
 [![Crowdin](https://img.shields.io/badge/Localization-Crowdin-blueviolet?logo=Crowdin)](https://crowdin.com/project/lsposed_jingmatrix)
@@ -11,7 +11,10 @@
 
 ### Wprowadzenie
 
-Vector to moduł Zygisk, który zapewnia strukturę do tworzenia hooków, zachowując spójność API z oryginalnym xposed. Został on opracowany na bazie [LSPlant](https://github.com/JingMatrix/LSPlant), aby zapewnić stabilne środowisko instrumentacji na poziomie natywnym.
+Mój fork ma pełne i dokładniejsze polskie tłumaczenie. 
+Naprawiłem też problem z nieładującą się listą modułów.
+
+Vector to moduł zygisk, który zapewnia strukturę do tworzenia zaczepów, zachowując spójność API z oryginalnym xposed. Został on opracowany na bazie [LSPlant](https://github.com/JingMatrix/LSPlant), aby zapewnić stabilne środowisko instrumentacji na poziomie natywnym.
 
 Vector umożliwia modułom modyfikację działania systemu i aplikacji w pamięci. Ponieważ pliki APK nie są modyfikowane, zmiany są nieniszczące, łatwo odwracalne poprzez ponowne uruchomienie i kompatybilne z różnymi ROM-ami i wersjami Androida.
 
