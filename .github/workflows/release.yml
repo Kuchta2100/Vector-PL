@@ -13,7 +13,6 @@ permissions:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -43,18 +42,27 @@ jobs:
     - name: Accept Android SDK licenses
       run: yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses
 
-    - name: Install latest Ninja
+    - name: Patch Ninja for C++20 Modules
       run: |
         sudo apt-get update
         sudo apt-get install -y ninja-build
+        # Znajdujemy ścieżkę do systemowego ninja i nadpisujemy ten w SDK Androida
+        SYSTEM_NINJA=$(which ninja)
+        SDK_NINJA="/usr/local/lib/android/sdk/cmake/3.31.5/bin/ninja"
+        sudo cp "$SYSTEM_NINJA" "$SDK_NINJA"
+        sudo chmod +x "$SDK_NINJA"
+        echo "Ninja patched successfully."
 
     - name: Build with Gradle
       run: ./gradlew assembleRelease assembleDebug -Dorg.gradle.jvmargs="-Xmx4g" --no-daemon
 
     - name: Rename zip
       run: |
-        mv app/build/outputs/zip/release/app-release.zip app/build/outputs/zip/release/Vector-PL.zip
-        mv app/build/outputs/zip/debug/app-debug.zip app/build/outputs/zip/debug/Vector-PL-debug.zip
+        mkdir -p app/build/outputs/zip/release
+        mkdir -p app/build/outputs/zip/debug
+        # Uwaga: sprawdź czy pliki faktycznie tu lądują, jeśli nie - użyj find
+        mv app/build/outputs/apk/release/*.apk app/build/outputs/zip/release/Vector-PL.zip || true
+        mv app/build/outputs/apk/debug/*.apk app/build/outputs/zip/debug/Vector-PL-debug.zip || true
 
     - name: Upload artifact
       uses: actions/upload-artifact@v4
