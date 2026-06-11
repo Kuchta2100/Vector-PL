@@ -1,10 +1,12 @@
-name: Vector-PL
+name: Vector-PL-release
 
 on:
+  workflow_dispatch:
   push:
     branches: [ PL ]
+    tags: [ 2.0 ]
   pull_request:
-  workflow_dispatch:
+  merge_group:
 
 permissions:
   contents: write
