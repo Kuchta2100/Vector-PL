@@ -43,7 +43,7 @@ jobs:
     - name: Accept Android SDK licenses
       run: yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses
 
-          - name: Build with Gradle
+    - name: Build with Gradle
       run: ./gradlew assembleRelease assembleDebug -Dorg.gradle.jvmargs="-Xmx4g" --no-daemon
 
     - name: Rename zip
