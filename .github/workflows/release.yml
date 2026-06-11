@@ -38,6 +38,13 @@ jobs:
         echo ${{ secrets.SIGNING_KEY }} | base64 --decode > key.jks
         fi
 
+    - name: Accept Android SDK licenses
+      run: yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses
+
+    - name: Build with Gradle
+      run: ./gradlew assembleRelease assembleDebug
+
+
     - name: Build with Gradle
       run: ./gradlew assembleRelease assembleDebug
 
