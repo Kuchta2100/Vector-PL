@@ -43,7 +43,7 @@ Vector obsługuje urządzenia z systemem **Android 8.1 do Androida 17 Beta**.
 
 | Kanał | Źródło |
 | :--- | :--- |
-| **Wersje stabilne** | [Wersje GitHub](https://github.com/Kuchta-2100/Vector-PL/releases) |
+| **Wersje stabilne** | [Wersje GitHub](https://github.com/Kuchta2100/Vector-PL/releases/tag/2.0) |
 | **Wersje testowe** | [Akcje GitHub](https://github.com/Kuchta2100/Vector-PL/actions/workflows/core.yml?query=branch%3APL) |
 
 > [!NOTE]
