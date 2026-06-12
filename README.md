@@ -96,4 +96,4 @@ Ten projekt jest możliwy dzięki następującym wkładom open source:
 
 ### Licencja
 
-Vector jest licencjonowany na podstawie Ogólnej Licencji Publicznej v3](http://www.gnu.org/copyleft/gpl.html).
+Vector jest licencjonowany na podstawie [Ogólnej Licencji Publicznej v3](http://www.gnu.org/copyleft/gpl.html).
