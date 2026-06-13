@@ -56,6 +56,10 @@ jobs:
     - name: Build with Gradle
       run: ./gradlew assembleRelease assembleDebug -Dorg.gradle.jvmargs="-Xmx4g" --no-daemon
 
+    - name: List files
+      run: find app/build/outputs/ -name "*.zip"
+
+
     - name: Rename zip
       run: |
         # Uwaga: sprawdź czy pliki faktycznie tu lądują, jeśli nie - użyj find
