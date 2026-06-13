@@ -46,7 +46,6 @@ jobs:
       run: |
         sudo apt-get update
         sudo apt-get install -y ninja-build
-        # Znajdujemy ścieżkę do systemowego ninja i nadpisujemy ten w SDK Androida
         SYSTEM_NINJA=$(which ninja)
         SDK_NINJA="/usr/local/lib/android/sdk/cmake/3.31.5/bin/ninja"
         sudo cp "$SYSTEM_NINJA" "$SDK_NINJA"
@@ -56,12 +55,12 @@ jobs:
     - name: Build with Gradle
       run: ./gradlew assembleRelease assembleDebug -Dorg.gradle.jvmargs="-Xmx4g" --no-daemon
 
-        - name: List files
+    - name: List files
       run: find app/build/outputs/ -maxdepth 4
 
     - name: Rename zip
       run: |
-        # Uwaga: sprawdź czy pliki faktycznie tu lądują, jeśli nie - użyj find
+        mkdir -p app/build/outputs/zip/release app/build/outputs/zip/debug
         mv app/build/outputs/apk/release/*.zip app/build/outputs/zip/release/Vector-PL-2.0.3043-release.zip || true
         mv app/build/outputs/apk/debug/*.zip app/build/outputs/zip/debug/Vector-PL-2.0.3043-debug.zip || true
 
@@ -70,7 +69,6 @@ jobs:
       with:
         name: outputs
         path: |
-
           app/build/outputs/zip/release/Vector-PL-2.0.3043-release.zip
           app/build/outputs/zip/debug/Vector-PL-2.0.3043-debug.zip
 
