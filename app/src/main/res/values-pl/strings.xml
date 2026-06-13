@@ -1,7 +1,7 @@
 
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  ~ Ten plik jest częścią Vector.
+~ Ten plik jest częścią Vector.
 ~
 ~ Vector jest wolnym oprogramowaniem: możesz je redystrybuować i/lub modyfikować
 ~ zgodnie z warunkami Powszechnej Licencji Publicznej, opublikowanej przez
@@ -175,11 +175,11 @@
   <string name="dark_theme_off">Zawsze wyłączony</string>
   <string name="dark_theme_on">Zawsze włączony</string>
   <string name="follow_system">Według systemu</string>
-  <string name="settings_backup_and_restore">Kopia zapasowa i przywracanie</string>
-  <string name="settings_backup_summery">Kopia zapasowa listy modułów i zakresów.</string>
+  <string name="settings_backup_and_restore">Kopia i przywracanie</string>
+  <string name="settings_backup_summery">Kopia listy modułów i zakresów.</string>
   <string name="settings_restore_summery">Przywróć listę modułów i zakresów.</string>
   <string name="settings_backup">Kopia zapasowa</string>
-  <string name="settings_backup_failed2">Nie udało się utworzyć kopii zapasowej:\n%s</string>
+  <string name="settings_backup_failed2">Nie udało się utworzyć kopii:\n%s</string>
   <string name="enable_documentui">Proszę włączyć interfejs dokumentów</string>
   <string name="settings_restore">Przywróć</string>
   <string name="settings_restore_failed2">Nie udało się przywrócić:\n%s</string>
