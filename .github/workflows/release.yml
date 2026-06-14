@@ -37,6 +37,9 @@ jobs:
           distribution: temurin
           java-version: 21
 
+      - name: Accept Licenses
+        run: yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses
+
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v5
 
