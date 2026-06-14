@@ -61,9 +61,8 @@ jobs:
     - name: Rename zip
       run: |
         mkdir -p app/build/outputs/zip/release app/build/outputs/zip/debug
-        find app/build/outputs/ -name "*.zip" -exec mv {} app/build/outputs/zip/release/ \;
-        [ -f app/build/outputs/zip/release/*-release.zip ] && mv app/build/outputs/zip/release/*-release.zip app/build/outputs/zip/release/Vector-PL-2.0.3043-release.zip
-        [ -f app/build/outputs/zip/release/*-debug.zip ] && mv app/build/outputs/zip/release/*-debug.zip app/build/outputs/zip/debug/Vector-PL-2.0.3043-debug.zip
+        mv app/build/outputs/apk/release/*-release.zip app/build/outputs/zip/release/Vector-PL-2.0.3043-release.zip
+        mv app/build/outputs/apk/debug/*-debug.zip app/build/outputs/zip/debug/Vector-PL-2.0.3043-debug.zip
 
 
     - name: Upload artifact
