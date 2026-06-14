@@ -1,4 +1,4 @@
-name: Release
+name: Vector-PL-Release
 
 on:
   workflow_dispatch:
