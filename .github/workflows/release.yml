@@ -63,4 +63,3 @@ jobs:
             zygisk/release/Vector-PL-2.0.3043-Release.zip
             zygisk/release/Vector-PL-2.0.3043-Debug.zip
           force: true
-          generate_release_notes: true
