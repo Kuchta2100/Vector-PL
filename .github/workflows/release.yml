@@ -58,12 +58,11 @@ jobs:
     - name: List files
       run: find app/build/outputs/ -maxdepth 4
 
-        - name: Rename zip
+    - name: Rename zip
       run: |
         mkdir -p app/build/outputs/zip/release app/build/outputs/zip/debug
         find app/build/ -type f -name "*release*.zip" -exec mv {} app/build/outputs/zip/release/Vector-PL-2.0.3043-release.zip \;
         find app/build/ -type f -name "*debug*.zip" -exec mv {} app/build/outputs/zip/debug/Vector-PL-2.0.3043-debug.zip \;
-
 
     - name: Upload artifact
       uses: actions/upload-artifact@v4
