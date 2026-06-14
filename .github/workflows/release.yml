@@ -58,7 +58,7 @@ jobs:
     - name: List files
       run: find app/build/outputs/ -maxdepth 4
 
-        - name: Rename zip
+    - name: Rename zip
       run: |
         mkdir -p app/build/outputs/zip/release app/build/outputs/zip/debug
         find app/build/outputs/ -name "*.zip" -exec mv {} app/build/outputs/zip/release/ \;
